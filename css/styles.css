@@ -1,0 +1,348 @@
+/* =========================================================
+   Hygge Tygge — Curated Living
+   Palette: greige base, dusty rose + sage accents.
+   No teal. Ever.
+   ========================================================= */
+
+:root {
+  /* Greige — the heart of it. Not grey. Not beige. */
+  --greige-50:  #F4F1EB;
+  --greige-100: #EAE5DB;
+  --greige-200: #DED7C9;
+  --greige-300: #C9C0AF;
+  --greige-500: #A89E8B;
+
+  /* Accents */
+  --rose:  #C9A9A1;   /* dusty rose */
+  --rose-soft: #DCC6C1;
+  --sage:  #A3AC97;   /* sage */
+  --sage-soft: #C2C8B8;
+
+  /* Ink */
+  --ink:      #4A453E;
+  --ink-soft: #6E675D;
+
+  --maxw: 1140px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--greige-50);
+  color: var(--ink);
+  font-family: "Jost", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin: 0 0 0.5em;
+}
+
+p { margin: 0 0 1.2em; }
+a { color: var(--ink); }
+
+img { max-width: 100%; display: block; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Buttons & links ---------- */
+.btn {
+  display: inline-block;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink-soft);
+  padding: 0.95em 2.4em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+}
+.btn:hover { background: var(--ink); color: var(--greige-50); }
+
+.link-arrow {
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage);
+  padding-bottom: 3px;
+}
+.link-arrow::after { content: " \2192"; }
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem clamp(1.25rem, 5vw, 3.5rem);
+  background: rgba(244, 241, 235, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--greige-200);
+}
+.brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+.site-nav { display: flex; gap: 2.2rem; }
+.site-nav a {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.site-nav a:hover,
+.site-nav a.is-current { color: var(--ink); border-color: var(--rose); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column; gap: 5px;
+  background: none; border: 0; cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span {
+  width: 24px; height: 1.5px; background: var(--ink);
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ---------- Hero ---------- */
+.hero {
+  /* PLACEHOLDER: replace this gradient with the final linen photograph, e.g.
+     background-image: url("../images/hero-linen.jpg");
+     background-size: cover; background-position: center; */
+  background:
+    radial-gradient(120% 90% at 70% 10%, var(--greige-100), transparent 60%),
+    linear-gradient(160deg, var(--greige-200) 0%, var(--greige-300) 55%, var(--greige-500) 100%);
+  min-height: 88vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 6rem 1.5rem;
+}
+.hero__inner { max-width: 640px; }
+.hero__branch { width: 200px; height: auto; margin: 0 auto 1.5rem; opacity: 0.9; }
+.hero__eyebrow,
+.eyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+.hero__title {
+  font-size: clamp(3.4rem, 9vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.4em;
+}
+.hero__tagline {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin-bottom: 2.2rem;
+}
+
+/* ---------- Page hero (interior) ---------- */
+.page-hero {
+  text-align: center;
+  padding: 5rem 1.5rem 3rem;
+  background: linear-gradient(180deg, var(--greige-100), var(--greige-50));
+}
+.page-hero__title {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: 300;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 8vw, 6.5rem) clamp(1.25rem, 5vw, 3.5rem);
+}
+.section--narrow { max-width: 720px; text-align: center; }
+.section--tint {
+  max-width: none;
+  background: var(--greige-100);
+}
+.section--tint > * { /* keep inner content constrained */ }
+.section--tint .section__head,
+.section--tint .grid,
+.section--tint .insta-grid,
+.section--tint .insta-follow {
+  max-width: var(--maxw);
+  margin-left: auto; margin-right: auto;
+}
+
+.section__head { text-align: center; margin-bottom: 3rem; }
+.section h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+
+.lede { font-size: 1.18rem; color: var(--ink-soft); }
+.lede--center { max-width: 540px; margin-left: auto; margin-right: auto; }
+
+/* ---------- Grid / cards ---------- */
+.grid { display: grid; gap: 2rem; }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+.card { text-align: left; }
+.card--plain { text-align: center; }
+.card h3 { font-size: 1.6rem; margin-top: 1rem; }
+.card p { color: var(--ink-soft); font-size: 0.98rem; }
+
+.card__media {
+  aspect-ratio: 4 / 5;
+  border-radius: 2px;
+  /* PLACEHOLDER: swap these tints for real product photography. */
+}
+.card__media--rose   { background: linear-gradient(150deg, var(--rose-soft), var(--rose)); }
+.card__media--sage   { background: linear-gradient(150deg, var(--sage-soft), var(--sage)); }
+.card__media--greige { background: linear-gradient(150deg, var(--greige-200), var(--greige-500)); }
+
+/* ---------- Stockists ---------- */
+.stockists {
+  list-style: none; margin: 0 auto; padding: 0;
+  max-width: 760px;
+}
+.stockist {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.4rem 0.25rem;
+  border-bottom: 1px solid var(--greige-200);
+}
+.stockist:first-child { border-top: 1px solid var(--greige-200); }
+.stockist__name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+}
+.stockist__loc {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: right;
+}
+.stockists__note {
+  text-align: center; margin-top: 2rem;
+  font-size: 0.95rem; color: var(--ink-soft);
+}
+
+/* ---------- Instagram grid ---------- */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.6rem;
+}
+.insta-tile {
+  aspect-ratio: 1 / 1;
+  display: block;
+  border-radius: 2px;
+  transition: opacity 0.4s var(--ease);
+  /* PLACEHOLDER: replace tint backgrounds with <img> from the live feed. */
+}
+.insta-tile:hover { opacity: 0.78; }
+.insta-tile--greige { background: linear-gradient(135deg, var(--greige-200), var(--greige-500)); }
+.insta-tile--rose   { background: linear-gradient(135deg, var(--rose-soft), var(--rose)); }
+.insta-tile--sage   { background: linear-gradient(135deg, var(--sage-soft), var(--sage)); }
+.insta-follow { text-align: center; margin-top: 2rem; }
+
+/* ---------- Newsletter ---------- */
+.newsletter__form {
+  display: flex; justify-content: center; gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.newsletter__form input {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  padding: 0.95em 1.4em;
+  width: min(360px, 100%);
+  background: var(--greige-50);
+  border: 1px solid var(--greige-300);
+  color: var(--ink);
+}
+.newsletter__form input::placeholder { color: var(--ink-soft); }
+.newsletter__form input:focus {
+  outline: none; border-color: var(--sage);
+}
+.newsletter__msg {
+  min-height: 1.4em; margin-top: 1rem;
+  font-size: 0.9rem; letter-spacing: 0.04em; color: var(--sage);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--greige-100);
+  border-top: 1px solid var(--greige-200);
+}
+.site-footer p {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .grid--3 { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .nav-toggle { display: flex; }
+  .site-nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--greige-50);
+    border-bottom: 1px solid var(--greige-200);
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s var(--ease);
+  }
+  .site-nav.is-open { max-height: 320px; }
+  .site-nav a {
+    padding: 1rem clamp(1.25rem, 5vw, 3.5rem);
+    border-bottom: 1px solid var(--greige-200);
+  }
+  .site-nav a:hover,
+  .site-nav a.is-current { border-color: var(--greige-200); }
+}
+
+@media (max-width: 520px) {
+  body { font-size: 17px; }
+  .stockist { flex-direction: column; gap: 0.25rem; }
+  .stockist__loc { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; }
+}

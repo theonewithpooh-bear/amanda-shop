@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hygge Tygge — Curated Living</title>
+  <meta name="description" content="A thoughtful edit of consciously sourced homewares. Scandinavian calm, curated living." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html">Hygge&nbsp;Tygge</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" data-nav>
+      <a href="index.html" class="is-current">Home</a>
+      <a href="about.html">About</a>
+      <a href="#stockists">Stockists</a>
+      <a href="#hygge-circle">The Hygge Circle</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Hero =====
+         PLACEHOLDER IMAGERY: drop the final full-bleed linen + olive branch
+         shot into css/styles.css under `.hero` (background-image). Until then
+         the greige gradient + inline olive branch SVG stand in. -->
+    <section class="hero">
+      <div class="hero__inner">
+        <svg class="hero__branch" viewBox="0 0 200 120" aria-hidden="true">
+          <path d="M10 60 Q 90 50 190 58" fill="none" stroke="#A3AC97" stroke-width="2" stroke-linecap="round"/>
+          <g fill="#A3AC97">
+            <ellipse cx="48" cy="46" rx="13" ry="6" transform="rotate(-32 48 46)"/>
+            <ellipse cx="76" cy="70" rx="13" ry="6" transform="rotate(28 76 70)"/>
+            <ellipse cx="104" cy="44" rx="13" ry="6" transform="rotate(-30 104 44)"/>
+            <ellipse cx="132" cy="68" rx="13" ry="6" transform="rotate(30 132 68)"/>
+            <ellipse cx="160" cy="46" rx="13" ry="6" transform="rotate(-28 160 46)"/>
+          </g>
+        </svg>
+        <p class="hero__eyebrow">A Lifestyle Concept Store</p>
+        <h1 class="hero__title">Hygge Tygge</h1>
+        <p class="hero__tagline">Scandinavian calm, quietly composed for considered living.</p>
+        <a href="#hygge-circle" class="btn">Join the Hygge Circle</a>
+      </div>
+    </section>
+
+    <!-- ===== Intro ===== -->
+    <section class="section section--narrow">
+      <p class="eyebrow">Welcome</p>
+      <h2>A thoughtful edit, not a shop floor</h2>
+      <p class="lede">
+        Hygge Tygge is an experience — a slow, deliberate gathering of
+        consciously sourced homewares for the modern woman who refuses to
+        compromise. Linen that softens with every wash. Reclaimed oak that
+        remembers the forest. Nothing loud. Everything intentional.
+      </p>
+      <a href="about.html" class="link-arrow">Read our story</a>
+    </section>
+
+    <!-- ===== Edit / featured ===== -->
+    <section class="section section--tint">
+      <div class="section__head">
+        <p class="eyebrow">The Edit</p>
+        <h2>Pieces worth living with</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__media card__media--rose" aria-hidden="true"></div>
+          <h3>Softened Linen</h3>
+          <p>Stonewashed throws and bedding in greige, dusty rose and sage.</p>
+        </article>
+        <article class="card">
+          <div class="card__media card__media--sage" aria-hidden="true"></div>
+          <h3>Reclaimed Oak</h3>
+          <p>Benches and boards with a past, finished for a long, quiet future.</p>
+        </article>
+        <article class="card">
+          <div class="card__media card__media--greige" aria-hidden="true"></div>
+          <h3>Considered Objects</h3>
+          <p>Hand-stamped muslin, ceramics and small things that earn their place.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Stockists ===== -->
+    <section class="section" id="stockists">
+      <div class="section__head">
+        <p class="eyebrow">Where to Find Us</p>
+        <h2>Stockists</h2>
+        <p class="lede lede--center">
+          Our edit is carried by a small, carefully chosen circle of partners
+          who share our quiet standards.
+        </p>
+      </div>
+      <ul class="stockists">
+        <li class="stockist">
+          <span class="stockist__name">Hygge Tygge — Flagship</span>
+          <span class="stockist__loc">Chiswick · By appointment</span>
+        </li>
+        <li class="stockist">
+          <span class="stockist__name">Anne's, on the Green</span>
+          <span class="stockist__loc">Homewares &amp; gifting</span>
+        </li>
+        <li class="stockist">
+          <span class="stockist__name">The Studio Collective</span>
+          <span class="stockist__loc">Stockist enquiries welcome</span>
+        </li>
+        <li class="stockist">
+          <span class="stockist__name">Online Atelier</span>
+          <span class="stockist__loc">Shipping nationwide</span>
+        </li>
+      </ul>
+      <p class="stockists__note">
+        Interested in carrying the edit? <a href="#hygge-circle">Become a stockist</a>.
+      </p>
+    </section>
+
+    <!-- ===== Instagram feed =====
+         INTEGRATION: this grid is a placeholder. Connect a live feed by either
+         (a) the Instagram Basic Display API, or (b) an embed widget such as
+         EmbedSocial / Behold. Render results into `.insta-grid` — markup per
+         tile: <a class="insta-tile"><img ... /></a>. js/main.js has a stub. -->
+    <section class="section section--tint" id="instagram">
+      <div class="section__head">
+        <p class="eyebrow">@hyggetygge</p>
+        <h2>From the Grid</h2>
+      </div>
+      <div class="insta-grid" data-insta-grid>
+        <a class="insta-tile insta-tile--greige" href="https://instagram.com/hyggetygge" aria-label="Instagram post"></a>
+        <a class="insta-tile insta-tile--rose" href="https://instagram.com/hyggetygge" aria-label="Instagram post"></a>
+        <a class="insta-tile insta-tile--sage" href="https://instagram.com/hyggetygge" aria-label="Instagram post"></a>
+        <a class="insta-tile insta-tile--rose" href="https://instagram.com/hyggetygge" aria-label="Instagram post"></a>
+        <a class="insta-tile insta-tile--sage" href="https://instagram.com/hyggetygge" aria-label="Instagram post"></a>
+        <a class="insta-tile insta-tile--greige" href="https://instagram.com/hyggetygge" aria-label="Instagram post"></a>
+      </div>
+      <p class="insta-follow">
+        <a class="link-arrow" href="https://instagram.com/hyggetygge">Follow @hyggetygge</a>
+      </p>
+    </section>
+
+    <!-- ===== Newsletter ===== -->
+    <section class="section section--narrow newsletter" id="hygge-circle">
+      <p class="eyebrow">Stay Close</p>
+      <h2>The Hygge Circle</h2>
+      <p class="lede lede--center">
+        Quiet notes on new arrivals, slow living and the occasional fig-scented
+        thought. No noise. Ever.
+      </p>
+      <form class="newsletter__form" data-newsletter>
+        <label class="visually-hidden" for="email">Email address</label>
+        <input type="email" id="email" name="email" required
+               placeholder="Join the Hygge Circle" autocomplete="email" />
+        <button type="submit" class="btn">Join</button>
+      </form>
+      <p class="newsletter__msg" data-newsletter-msg role="status"></p>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>Hygge Tygge — Curated Living</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
